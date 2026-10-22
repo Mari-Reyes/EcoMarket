@@ -358,36 +358,3 @@ footer { background: var(--sand); border-top: var(--line-strong); }
   outline: 2px solid var(--green);
   outline-offset: 1px;
 }
-
-/* --- Alineación y centrado de las tarjetas --- */
-.pillar-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.pillar-card h3 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--ink);
-  margin-bottom: 0.5rem;
-}
-
-/* --- Tamaño de los iconos (Agrandar los iconos SVG) --- */
-.pillar-card .icon {
-  width: 75px;        /* Aumenta el ancho (ej. de 40px a 75px o 80px) */
-  height: 75px;       /* Mantén el mismo alto */
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-  transition: transform 0.2s ease;
-}
-
-.pillar-card:hover .icon {
-  transform: scale(1.08); /* Efecto suave de aumento al pasar el cursor */
-}

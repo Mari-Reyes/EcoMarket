@@ -207,3 +207,55 @@ main {
   height: 36px;
   object-fit: contain;
 }
+
+
+/* ==========================================================================
+   ENCABEZADOS (HERO) UNIFICADOS PARA LAS 4 PÁGINAS
+   ========================================================================== */
+
+/* 1. Estilo base y capas de fondo para todas las secciones Hero */
+.hero, 
+.hero-catalog, 
+.hero-about, 
+.hero-contact {
+  /* Capa semitransparente clara para dar alto contraste sobre cualquier imagen */
+  background-image: linear-gradient(
+      rgba(245, 245, 220, 0.55), 
+      rgba(245, 245, 220, 0.55)
+    ), 
+    url('../img/hero/hero.index.png'); /* Imagen de fondo predeterminada */
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  padding: 4rem 2rem;
+  text-align: center;
+  margin: 1.5rem auto;
+  max-width: 1200px;
+}
+
+/* 2. Estilos para que los títulos principales resalten */
+.hero h1, 
+.hero-catalog h1, 
+.hero-about h1, 
+.hero-contact h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+
+/* 3. Estilos de alta legibilidad para los párrafos de todos los Hero */
+.hero p, 
+.hero-catalog p, 
+.hero-about p, 
+.hero-contact p {
+  color: #1b261b;             /* Verde oscuro profundo para máximo contraste */
+  font-size: 1.15rem;          /* Tamaño de letra más cómodo y legible */
+  font-weight: 600;            /* Letra semi-negrita */
+  line-height: 1.6;            /* Espaciado claro entre líneas */
+  max-width: 650px;            /* Limita el ancho del texto */
+  margin: 1.25rem auto 2rem;   /* Centra el párrafo automáticamente */
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8); /* Sombra clara de resalte */
+}
