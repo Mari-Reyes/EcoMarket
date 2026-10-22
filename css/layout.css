@@ -91,3 +91,99 @@ main {
   .products-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
   .stats-grid { grid-template-columns: 1fr; }
 }
+
+/* --- Estructura Principal del Catálogo (Filtros a la izq, Productos a la der) --- */
+.catalog-container {
+  display: grid;
+  grid-template-columns: 260px 1fr; /* Filtros fijos / Productos ocupan todo el resto */
+  gap: 2rem;
+  align-items: start;
+  width: 100%;
+}
+
+/* --- Cuadrícula Multicolumna de Productos (Ocupa toda la pantalla disponible) --- */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); /* Crea columnas dinámicas según el espacio */
+  gap: 1.25rem;
+  width: 100%;
+}
+
+/* Asegurar que las tarjetas de productos se adapten al contenedor */
+.product-card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* --- Contenedor Principal del Newsletter --- */
+.newsletter-section {
+  text-align: center;
+  padding: 3.5rem 1.5rem;
+  background-color: var(--card); /* Fondo contrastado estilo tarjeta */
+  border: var(--line-strong);
+  border-radius: 20px;
+  max-width: 680px;
+  margin: 3rem auto; /* Centrado en la página */
+}
+
+.newsletter-section h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+}
+
+.newsletter-section p {
+  color: var(--ink);
+  font-size: 1rem;
+  margin-bottom: 1.75rem;
+  line-height: 1.5;
+}
+
+/* --- Formulario y Caja de Entrada --- */
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.newsletter-form input[type="email"] {
+  flex: 1;
+  padding: 0.75rem 1.25rem;
+  border: var(--line-strong);
+  border-radius: 999px; /* Bordes totalmente redondeados estilo píldora */
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.newsletter-form input[type="email"]:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2);
+}
+
+/* --- Botón "Suscribirme" --- */
+.newsletter-form button {
+  padding: 0.75rem 1.75rem;
+  border: none;
+  border-radius: 999px;
+  background-color: var(--green);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.newsletter-form button:hover {
+  background-color: var(--green-dark);
+  transform: translateY(-1px);
+}

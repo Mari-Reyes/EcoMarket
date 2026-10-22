@@ -11,7 +11,7 @@
 </head>
 <body>
 
-  <!-- Cabecera compartida -->
+  <!-- Cabecera -->
   <header>
     <a href="../index.html" class="logo">EcoMarket</a>
     
@@ -24,21 +24,31 @@
       </ul>
     </nav>
 
-    <form role="search" action="/buscar" method="get">
-      <label for="search-input" class="visually-hidden">Buscar productos</label>
-      <input 
-        type="search" 
-        id="search-input" 
-        name="q" 
-        placeholder="Buscar productos ecológicos, materiales, marcas..." 
-        required
-      >
-      <button type="submit">Buscar</button>
+    <form role="search" action="/buscar" method="get" class="header-search">
+      <div class="search-input-wrapper">
+        <input 
+          type="search" 
+          id="search-input" 
+          name="q" 
+          placeholder="Buscar productos ecológicos..." 
+          required
+        >
+        <button type="submit" aria-label="Buscar">
+          <img src="../img/icons/search.svg" alt="" class="btn-icon-sm">
+          <span>Buscar</span>
+        </button>
+      </div>
     </form>
 
     <div class="user-actions">
-      <a href="#favoritos">Favoritos</a>
-      <a href="#carrito" aria-label="Carrito de compras con 0 artículos">Carrito (0)</a>
+      <a href="#favoritos" class="user-btn">
+        <img src="../img/icons/borderstar.svg" alt="" class="btn-icon-sm">
+        <span>Favoritos</span>
+      </a>
+      <a href="#carrito" class="user-btn" aria-label="Carrito de compras con 0 artículos">
+        <img src="../img/icons/cart.svg" alt="" class="btn-icon-sm">
+        <span>Carrito (0)</span>
+      </a>
     </div>
   </header>
 
@@ -52,21 +62,20 @@
       </p>
     </section>
 
-
+    <!-- Contenedor del Catálogo (Filtros a la izquierda, Productos a la derecha) -->
     <div class="catalog-container">
 
-      
+      <!-- BARRA LATERAL DE FILTROS -->
       <aside class="catalog-filters">
         
         <div class="filter-group search-filter">
           <h3>Buscar</h3>
           <div class="search-box">
-            <img src="../img/icons/search.svg" alt="" class="search-icon">
+            <img src="../img/icons/search.svg" alt="" class="sidebar-search-icon">
             <input type="text" placeholder="Buscar por nombre o material..." aria-label="Buscar por nombre o material">
           </div>
         </div>
 
-        
         <div class="filter-group">
           <h3>Categorías</h3>
           <ul class="filter-list">
@@ -109,7 +118,35 @@
           </ul>
         </div>
 
-        
+        <div class="sort-options">
+          <label for="sort-select">Ordenar por:</label>
+          <select id="sort-select" name="sort">
+            <option value="populares">Más populares</option>
+            <option value="precio-menor">Precio: Menor a Mayor</option>
+            <option value="precio-mayor">Precio: Mayor a Menor</option>
+            <option value="novedades">Novedades</option>
+          </select>
+        </div>
+
+      </aside>
+
+      <!-- SECCIÓN DE RESULTADOS (CUADRÍCULA DE PRODUCTOS EN PANTALLA COMPLETA) -->
+      <section class="catalog-results">
+
+        <div class="results-header">
+          <p class="results-count">Mostrando 32 de 32 productos ecológicos</p>
+          
+          <div class="sort-options">
+            <label for="sort-select">Ordenar por:</label>
+            <select id="sort-select">
+              <option value="populares">Más populares</option>
+              <option value="precio-menor">Precio: Menor a Mayor</option>
+              <option value="precio-mayor">Precio: Mayor a Menor</option>
+              <option value="novedades">Novedades</option>
+            </select>
+          </div>
+        </div>
+
         <div class="products-grid">
 
           <!-- ================= CATEGORÍA 1: Cocina & Comedor Zero Waste (7) ================= -->
@@ -225,7 +262,6 @@
             </div>
           </article>
 
-
           <!-- ================= CATEGORÍA 2: Cuidado Personal & Baño Botánico (7) ================= -->
           <article class="product-card">
             <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
@@ -339,7 +375,6 @@
             </div>
           </article>
 
-
           <!-- ================= CATEGORÍA 3: Organización & Limpieza Verde (6) ================= -->
           <article class="product-card">
             <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
@@ -436,7 +471,6 @@
               <button type="button" class="btn btn-add">Agregar al carrito</button>
             </div>
           </article>
-
 
           <!-- ================= CATEGORÍA 4: Textiles Orgánicos & Confort (6) ================= -->
           <article class="product-card">
@@ -535,7 +569,6 @@
             </div>
           </article>
 
-
           <!-- ================= CATEGORÍA 5: Esenciales para el Día a Día & Movilidad (6) ================= -->
           <article class="product-card">
             <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
@@ -609,7 +642,7 @@
             <div class="product-img-wrapper">
               <img src="../img/products/5-Esenciales-para-el-Día-a-Día-&-Movilidad-(6Productos)/BambuCutleryRoll.jpg" alt="Bambu Cutlery Roll">
             </div>
-            <h3>Bambu Cutlery Roll</h3>
+            <h3>BambuCutlery Roll</h3>
             <p>Estuche enrollable con tenedor, cuchillo, cuchara y palillos para comer fuera de casa sin cubiertos desechables.</p>
             <div class="product-card-footer">
               <span class="price">$16.50 USD</span>
@@ -635,50 +668,44 @@
 
         </div>
 
+      </section>
 
-        <div class="filter-group">
-          <h3>Rango de Precio</h3>
-          <div class="price-range">
-            <input type="range" id="price-slider" min="5" max="85" value="85">
-            <div class="price-labels">
-              <span>$5.00 USD</span>
-              <span>$85.00 USD</span>
-            </div>
-          </div>
-        </div>
+    </div>
 
-      </aside>
+  </main>
 
+  <!-- Pie de Página -->
+  <footer>
+    <div class="footer-columns">
+      
+      <div class="footer-col">
+        <h3>EcoMarket</h3>
+        <p>Tu mercado digital de confianza para productos sostenibles, reutilizables y éticos.</p>
+      </div>
 
-      <section class="catalog-results">
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="productos.html">Catálogo Completo</a></li>
+          <li><a href="sobre-nosotros.html">Nuestra Historia</a></li>
+          <li><a href="contacto.html">Contacto &amp; Soporte</a></li>
+        </ul>
+      </div>
 
-        
-        <div class="results-header">
-          <p class="results-count">Mostrando 32 de 32 productos ecológicos</p>
-          
-          <div class="sort-options">
-            <label for="sort-select">Ordenar por:</label>
-            <select id="sort-select">
-              <option value="populares">Más populares</option>
-              <option value="precio-menor">Precio: Menor a Mayor</option>
-              <option value="precio-mayor">Precio: Mayor a Menor</option>
-              <option value="novedades">Novedades</option>
-            </select>
-          </div>
-        </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <p>Email: <a href="mailto:hola@ecomarket.com">hola@ecomarket.com</a></p>
+        <p>Teléfono: <a href="tel:+573171236789">+57 (317) 123 6789</a></p>
+        <p>Ubicación: Bucaramanga, Santander</p>
+      </div>
 
-        
-        <div class="products-grid">
+    </div>
 
-        
-          <article class="product-card">
-            <button type="button" class="favorite-btn" aria-label="Añadir a favoritos">
-              <img src="../img/icons/heart.svg" alt="">
-            </button>
-            <span class="product-badge">Silicona Platino</span>
-            <div class="product-img-wrapper">
-              <img src="../img/products/1-Cocina-&-Comedor-Zero-Waste-(7Productos)/BorealCoverSet.jpg" alt="Boreal Cover Set">
-            </div>
-            <h3>Boreal Cover Set</h3>
-            <p>Cubiertas elásticas y reutilizables para alimentos.</p>
-            <div class="product-card
+    <div class="footer-bottom">
+      <p>&copy; 2026 EcoMarket. Todos los derechos reservados. Diseñado para un consumo consciente.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

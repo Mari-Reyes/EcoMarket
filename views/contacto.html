@@ -11,7 +11,7 @@
 </head>
 <body>
 
-
+  <!-- Cabecera -->
   <header>
     <a href="../index.html" class="logo">EcoMarket</a>
     
@@ -24,21 +24,31 @@
       </ul>
     </nav>
 
-    <form role="search" action="/buscar" method="get">
-      <label for="search-input" class="visually-hidden">Buscar productos</label>
-      <input 
-        type="search" 
-        id="search-input" 
-        name="q" 
-        placeholder="Buscar productos ecológicos, materiales, marcas..." 
-        required
-      >
-      <button type="submit">Buscar</button>
+    <form role="search" action="/buscar" method="get" class="header-search">
+      <div class="search-input-wrapper">
+        <input 
+          type="search" 
+          id="search-input" 
+          name="q" 
+          placeholder="Buscar productos ecológicos..." 
+          required
+        >
+        <button type="submit" aria-label="Buscar">
+          <img src="../img/icons/search.svg" alt="" class="btn-icon-sm">
+          <span>Buscar</span>
+        </button>
+      </div>
     </form>
 
     <div class="user-actions">
-      <a href="../img/icons/heart.svg">Favoritos</a>
-      <a href="../img/icons/cart.svg" aria-label="Carrito de compras con 0 artículos">Carrito (0)</a>
+      <a href="#favoritos" class="user-btn">
+        <img src="../img/icons/borderstar.svg" alt="" class="btn-icon-sm">
+        <span>Favoritos</span>
+      </a>
+      <a href="#carrito" class="user-btn" aria-label="Carrito de compras con 0 artículos">
+        <img src="../img/icons/cart.svg" alt="" class="btn-icon-sm">
+        <span>Carrito (0)</span>
+      </a>
     </div>
   </header>
 

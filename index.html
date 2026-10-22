@@ -24,24 +24,33 @@
     </nav>
 
 
-    <form role="search" action="/buscar" method="get">
-      <label for="search-input" class="visually-hidden">Buscar productos</label>
+<form role="search" action="..." method="get" class="header-search">
+    <div class="search-input-wrapper">
       <input 
         type="search" 
         id="search-input" 
         name="q" 
-        placeholder="Buscar productos ecológicos, materiales, marcas..." 
+        placeholder="Buscar productos ecológicos..." 
         required
       >
-      <button type="submit">Buscar</button>
-    </form>
-
-
-    <div class="user-actions">
-      <a href="../EcoMarket/img/icons/heart.svg">Favoritos</a>
-      <a href="../EcoMarket/img/icons/cart.svg" aria-label="Carrito de compras con 0 artículos">Carrito (0)</a>
+      <button type="submit" aria-label="Buscar">
+        <img src="../EcoMarket/img/icons/search.svg" alt="" class="btn-icon-sm">
+        <span>Buscar</span>
+      </button>
     </div>
-  </header>
+  </form>
+
+  <div class="user-actions">
+    <a href="#favoritos" class="user-btn">
+      <img src="../EcoMarket/img/icons/borderstar.svg" alt="" class="btn-icon-sm">
+      <span>Favoritos</span>
+    </a>
+    <a href="#carrito" class="user-btn" aria-label="Carrito de compras con 0 artículos">
+      <img src="../EcoMarket/img/icons/cart.svg" alt="" class="btn-icon-sm">
+      <span>Carrito (0)</span>
+    </a>
+  </div>
+</header>
 
 
   <main id="inicio">
@@ -211,22 +220,20 @@
     </section>
 
 
-    <section class="newsletter">
+    <section class="newsletter-section">
       <h2>Únete al Cambio Verde</h2>
       <p>Suscríbete a nuestro boletín para recibir consejos de vida sostenible, noticias y un 10% de descuento en tu primera compra.</p>
-
-      <form action="/subscribe" method="post">
-        <label for="newsletter-email" class="visually-hidden">Correo electrónico</label>
-        <input 
-          type="email" 
-          id="newsletter-email" 
-          name="email" 
-          placeholder="Tu correo electrónico..." 
-          required
-        >
-        <button type="submit">Suscribirme</button>
-      </form>
-    </section>
+  
+    <form class="newsletter-form" action="#" method="post">
+      <input 
+        type="email" 
+        placeholder="Tu correo electrónico..." 
+        required 
+        aria-label="Tu correo electrónico"
+      >
+      <button type="submit">Suscribirme</button>
+    </form>
+  </section>
 
   </main>
 
