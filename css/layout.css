@@ -187,3 +187,23 @@ main {
   background-color: var(--green-dark);
   transform: translateY(-1px);
 }
+
+/* --- Agrandar el círculo contenedor del icono --- */
+.value-icon, .feature-icon, .icon-circle {
+  width: 75px;   /* Cambia este valor para hacer el círculo más grande (ej: 80px o 90px) */
+  height: 75px;  /* Debe ser igual al width para que se mantenga perfectamente redondo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: var(--line-strong);
+  background-color: var(--card);
+  margin-bottom: 1rem;
+}
+
+/* --- Agrandar la imagen o icono SVG que va dentro --- */
+.value-icon img, .feature-icon img, .icon-circle img {
+  width: 36px;   /* Aumenta este valor para que el icono se vea más grande (ej: 40px) */
+  height: 36px;
+  object-fit: contain;
+}
