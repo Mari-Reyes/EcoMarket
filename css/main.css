@@ -177,3 +177,40 @@ html, body {
     font-size: 0.9rem;
   }
 }
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; /* Oculta cualquier scroll horizontal accidental */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  /* Convierte las cuadrículas múltiples en una sola columna en pantallas medianas/pequeñas */
+  .benefits, .product-grid, .footer-columns {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Ajusta los espacios internos (padding y márgenes) de las secciones principales */
+  .hero {
+    padding: 2.5rem 1rem;
+    margin: 1rem;
+    width: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  /* Para celulares muy pequeños, permite catálogos de 2 columnas compactas */
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+}
