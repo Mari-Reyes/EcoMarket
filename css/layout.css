@@ -259,3 +259,47 @@ main {
   margin: 1.25rem auto 2rem;   /* Centra el párrafo automáticamente */
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8); /* Sombra clara de resalte */
 }
+
+/* --- Corrección para celulares (pantallas menores a 768px) --- */
+@media (max-width: 768px) {
+  
+  /* 1. Hace que los filtros y la cuadrícula de productos pasen a una sola columna */
+  .catalog-container {
+    grid-template-columns: 1fr !important; /* Pasa de 2 columnas a 1 columna vertical */
+    gap: 1.5rem;
+    width: 100%;
+    overflow: hidden; /* Evita que el contenedor empuje hacia la derecha */
+  }
+
+  /* 2. Ajusta los productos para que quepan en la pantalla del celular */
+  .products-grid, 
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr) !important; /* Muestra 2 productos por fila */
+    gap: 0.75rem; /* Reduce el espacio entre tarjetas */
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 3. Asegura que las tarjetas no se salgan */
+  .product-card {
+    width: 100% !important;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 4. Mantiene las imágenes dentro de su tarjeta */
+  .product-img-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+/* --- Para pantallas de celulares muy pequeños (menores a 480px) --- */
+@media (max-width: 480px) {
+  /* Si prefieres que se vea 1 solo producto grande por fila en teléfonos pequeños: */
+  .products-grid, 
+  .product-grid {
+    grid-template-columns: 1fr !important; /* 1 producto por fila */
+  }
+}
