@@ -33,7 +33,7 @@ El proyecto consta de 4 vistas principales:
 ### Opción 1: Clonar e interactuar localmente
 1. Clona este repositorio en tu equipo local usando la terminal:
    ```bash
-   git clone (https://github.com/Mari-Reyes/EcoMarket.git)-(https://mari-reyes.github.io/EcoMarket/))
+   git clone (https://github.com/Mari-Reyes/EcoMarket.git)-(https://mari-reyes.github.io/EcoMarket/)-(https://deepwiki.com/Mari-Reyes/EcoMarket))
 2. Visualización desde el PC.
 
 <img width="1199" height="2646" alt="Captura de pantalla_22-10-2026_225252_mari-reyes github io" src="https://github.com/user-attachments/assets/37892d1b-8a24-4e54-b99d-43c939d1b74e" />
